@@ -1,0 +1,99 @@
+@import url('base.css');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+:root{
+    --animDur:7s;
+    --colHeaderBG: #b5a589;
+    --colMainBG: #806b45;
+    --colH1: #352303;
+    --colH2: #352303;
+    --colP: white;
+    --colNavText: #5a492b;
+    --colNavTextHover: white;
+    --colNavBGHover: #5a492b;
+    --colHeadBorder: #352303;
+    --colShapeCol: #5a492b;
+    --colTopBG: #da8d00;
+    
+}
+
+.introWrapper{
+    position: fixed; 
+    z-index: -1;
+    padding-top: 100px;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow:hidden;
+    background-color: var(--colTopBG); 
+    animation-name: introAnimWrap;
+    animation-duration: var(--animDur);
+    animation-iteration-count: 1; 
+   
+    
+}
+.introWrapper p
+{
+    
+    text-overflow: ellipsis-word;
+    font-family: 'Press Start 2P', cursive;
+    opacity: 0;
+    position: fixed;
+    font-size: 4rem;
+    text-align: center;
+    display: block;
+    height: 0px;
+    width: auto;
+    left: 10%;
+    top: 80%;
+    white-space: nowrap;
+    overflow:hidden;
+    color:black;
+    text-shadow: white 1rem 1rem;
+    animation-name: introTextAnim;
+    animation-duration: var(--animDur);
+    animation-iteration-count: 1; 
+ 
+}
+@keyframes introTextAnim
+{
+    0%{
+        opacity: 1;
+    }
+    10%{
+        top: 80%;
+        height: 0px;
+    }
+    50%{
+        top: 20%;
+        height: 100%;
+        opacity: 1;
+        transform:rotate(0);
+        font-size: 4rem;
+    }
+    60%
+    {
+        top: 0%;
+        height: 100%;
+        opacity: 0;
+    }
+}
+@keyframes introAnimWrap
+{
+    0%{
+        z-index: 1000;
+        opacity: 1;
+    }
+    60%{
+        height: 100%;
+    }
+    95%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        height: 0%;
+    }
+}

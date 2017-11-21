@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Days+One');
+:root{
+    --colHeaderBG: #fbec00;
+    --colMainBG: #222222;
+    --colH1: black;
+    --colH2: black;
+    --colP: white;
+    --colNavText: black;
+    --colNavTextHover: white;
+    --colNavBGHover: black;
+    --colHeadBorder: black;
+    --colShapeCol: #222222;
+    --colTopBG: orange;
+    --colHMarker: white;
+    --colEyeInset: white;
+    
+    --shapeSize: 4rem;
+    
+
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    
+}
+html{
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: Helvetica, Arial, sans-serif;
+}
+html,body{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+    h1{
+    font-family: 'Days One','Times New Roman', sans-serif;
+    font-size: 1.5rem;
+    color: var(--colH1);
+    
+}
+mark.w{
+    color: var(--colHMarker);
+    background: none;
+}
+h2{
+    font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+    font-size: 2.827rem;
+    padding:1rem 2rem;
+    color: var(--colH2);
+}
+
+p{
+    font-size: 1rem;
+    padding:0.5rem 2rem;
+    color: var(--colP);
+}
+main p:last-child{
+    padding-bottom: 2rem;
+}
+.wrapper{
+    box-shadow: rgba(0,0,0,0.7) 0 0.3rem 3rem;
+    flex-basis:auto;
+    background-color: var(--colMainBG);
+}
+.header-wrapper{
+    flex-basis: content;
+    background-color: var(--colHeaderBG);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+header{
+    width: 100%;
+    margin: 0 auto;
+    padding:1rem 4rem;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-basis: content;
+    border-bottom: 0.1rem solid var(--colHeadBorder);
+    background-color: var(--colTopBG);
+}
+header>h1{
+    margin: 0 2rem;
+    text-align: right;
+    flex-basis: 35%;
+    
+    
+}
+nav{
+   flex-basis: auto;
+
+}
+nav ul{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: center;
+    flex-wrap: nowrap;
+    
+}
+nav li{
+    z-index: 5;
+    margin: 0.4rem 1rem;
+    list-style-type: none;
+}
+nav li>a{
+    font-family: 'Days One','Times New Roman', sans-serif;
+    color: var(--colNavText);
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: block;
+}
+nav li>a:hover,
+nav li>a:active{
+    color: var(--colNavTextHover);
+    background-color: var(--colNavBGHover);
+    
+}
+main{
+    margin: auto;
+    width: 50%
+}
+.triangleT {
+    
+	height: 0;
+	width: 0;
+	border-left: var(--shapeSize) solid transparent;
+	border-right: var(--shapeSize) solid transparent;
+	border-bottom: var(--shapeSize) solid var(--colShapeCol);
+	border-top: var(--shapeSize) solid transparent;
+ transform: translateY(-50%);
+  position:relative;
+    
+    animation: 3s tT;
+    animation-iteration-count: infinite;
+
+}
+.triangleB {
+    
+	height: 0;
+	width: 0;
+	border-left: var(--shapeSize) solid transparent;
+	border-right: var(--shapeSize) solid transparent;
+	border-bottom: var(--shapeSize) solid transparent;
+	border-top: var(--shapeSize) solid var(--colShapeCol);
+    align-self: center;
+    animation: 5s tB;
+    animation-iteration-count: infinite;
+    
+
+
+  position:relative;
+}
+.eye{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+  background-color: var(--colShapeCol);
+    position:relative;
+   transform: translate(0%, -25%);
+     box-shadow:inset 0px 0px 0px 10px white;
+    animation: 3s eyeAnim;
+    animation-iteration-count: infinite;
+
+}
+
+.movingShape{
+    width: 50%;
+    height: auto;
+    margin:  0 auto;
+   display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    
+    
+}
+footer{
+    clear:both;
+    width: 100%;
+    
+}
+footer p{
+    font-size: 1rem;
+    padding: 1rem;
+    color: #666;
+}
+
+@keyframes eyeAnim 
+{
+    0%{
+        
+        transform:translate(0%, -25%) scaleY(1);
+        border-radius: 50%;
+    }
+    4%{
+        transform:translate(0%, -25%) scaleY(0);
+        border-radius: 100%;
+    }
+    8%{
+        transform:translate(0%, -25%) scaleY(1);
+        border-radius: 50%;
+    }
+}
+
+@keyframes tB 
+{
+    0%{
+        
+        transform: translateY(0%); 
+    }
+    50%{
+        transform:translateY(20%);
+    }
+    100%{
+        transform:translateY(0%); 
+    }
+}
+@keyframes tT 
+{
+    0%{
+        
+       transform: translateY(-50%); 
+    }
+    50%{
+        transform: translateY(-30%);
+    }
+    100%{
+        transform: translateY(-50%);
+    }
+}

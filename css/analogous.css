@@ -1,0 +1,16 @@
+@import url('base.css');
+:root{
+    --colHeaderBG: #5B4169;
+    --colMainBG: #413752;
+    --colH1: #413752;
+    --colH2: #454169;
+    --colP: white;
+    --colNavText: #413752;
+    --colNavTextHover: white;
+    --colNavBGHover: #413752;
+    --colHeadBorder: #413752;
+    --colShapeCol: #413752;
+    --colTopBG: #5C3A5F;
+    --colHMarker: white;
+    --colEyeInset: white;
+}
