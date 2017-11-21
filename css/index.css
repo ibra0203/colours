@@ -3,8 +3,8 @@
 
 :root{
     --animDur:7s;
-    --colHeaderBG: #b5a589;
-    --colMainBG: #806b45;
+    --colHeaderBG: #eba422;
+    --colMainBG: #886c3a;
     --colH1: #352303;
     --colH2: #352303;
     --colP: white;
@@ -14,6 +14,8 @@
     --colHeadBorder: #352303;
     --colShapeCol: #5a492b;
     --colTopBG: #da8d00;
+    --colHMarker: #eba422;
+    --colEyeInset: #fbeed8;
     
 }
 

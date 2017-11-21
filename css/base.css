@@ -167,7 +167,7 @@ main{
   background-color: var(--colShapeCol);
     position:relative;
    transform: translate(0%, -25%);
-     box-shadow:inset 0px 0px 0px 10px white;
+     box-shadow:inset 0px 0px 0px 10px var(--colEyeInset);
     animation: 3s eyeAnim;
     animation-iteration-count: infinite;
 
