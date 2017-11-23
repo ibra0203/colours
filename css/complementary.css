@@ -1,17 +1,27 @@
 @import url('base.css');
 :root{
-    --colHeaderBG: #29a189;
+    /*
+    Colors Used:
+    #A14129
+    #557B4A
+    #6E273D
+    #29a189
+    white
+    */
+    --colHeaderBG: #A14129;
     --colMainBG: #557B4A;
     --colH1: #6E273D;
-    --colH2: #6DA129;
+    --colH2: #6E273D;
     --colP: white;
     --colNavText: #6E273D;
     --colNavTextHover: white;
     --colNavBGHover: #6E273D;
-    --colHeadBorder: #7b4a54;
+    --colHeadBorder: #6E273D;
     --colShapeCol: #6E273D;
-    --colTopBG: #A14129;
+    --colTopBG: #29a189;
     --colHMarker: white;
     --colEyeInset: #A14129;
+    --colTopContentBG: #A14129;
+    --colTopContentShadow:#6E273D;
     
 }

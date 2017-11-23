@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Days+One');
+
+/*variables mainly for colors. Can be swapped in other CSS files.*/
 :root{
     --colHeaderBG: #fbec00;
     --colMainBG: #222222;
@@ -13,6 +15,9 @@
     --colTopBG: orange;
     --colHMarker: white;
     --colEyeInset: white;
+    --colTopContentBG: transparent;
+    --colTopContentShadow:transparent;
+    --colTopContentText:white;
     
     --shapeSize: 4rem;
     
@@ -28,7 +33,7 @@
 html{
     font-size: 16px;
     line-height: 1.6;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
 html,body{
     height:100%;
@@ -48,7 +53,7 @@ mark.w{
     background: none;
 }
 h2{
-    font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+    font-family: 'Days One','Times New Roman', sans-serif;
     font-size: 2.827rem;
     padding:1rem 2rem;
     color: var(--colH2);
@@ -67,30 +72,39 @@ main p:last-child{
     flex-basis:auto;
     background-color: var(--colMainBG);
 }
-.header-wrapper{
-    flex-basis: content;
-    background-color: var(--colHeaderBG);
+/*wrapper for the top part of the page*/
+.top-wrapper{
+    flex-basis: 60%;
+    background-color: var(--colTopBG);
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content:center;
+    justify-content:flex-start;
+    align-items: center;
+    
+
 }
 header{
     width: 100%;
-    margin: 0 auto;
+    height: 20%;
+    margin: 0 0;
     padding:1rem 4rem;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: flex-start;
-    flex-basis: content;
+    align-items: center;
+    flex-basis: auto;
     border-bottom: 0.1rem solid var(--colHeadBorder);
-    background-color: var(--colTopBG);
+    background-color: var(--colHeaderBG);
 }
 header>h1{
     margin: 0 2rem;
     text-align: right;
     flex-basis: 35%;
+    white-space: nowrap;
     
     
 }
@@ -115,19 +129,38 @@ nav li{
 nav li>a{
     font-family: 'Days One','Times New Roman', sans-serif;
     color: var(--colNavText);
+    
     font-size: 1.1rem;
     text-decoration: none;
     display: block;
+    transition: all 0.2s;
 }
 nav li>a:hover,
 nav li>a:active{
     color: var(--colNavTextHover);
     background-color: var(--colNavBGHover);
+    transition: all 0.2s;
     
 }
 main{
     margin: auto;
     width: 50%
+}
+
+/*Envelopes eye+triangleB+triangleT which make up the moving mascot below the header*/
+.movingMascot{
+    width: 30%;
+    height: auto;
+    
+    margin-right: auto;
+   display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:center;
+    flex-wrap: nowrap;
+    overflow: hidden; 
+    box-shadow:inset 0px 0px white;
 }
 .triangleT {
     
@@ -137,8 +170,8 @@ main{
 	border-right: var(--shapeSize) solid transparent;
 	border-bottom: var(--shapeSize) solid var(--colShapeCol);
 	border-top: var(--shapeSize) solid transparent;
- transform: translateY(-50%);
-  position:relative;
+    transform: translateY(-50%);
+   position:relative;
     
     animation: 3s tT;
     animation-iteration-count: infinite;
@@ -154,37 +187,61 @@ main{
 	border-top: var(--shapeSize) solid var(--colShapeCol);
     align-self: center;
     animation: 5s tB;
-    animation-iteration-count: infinite;
-    
-
-
-  position:relative;
+    animation-iteration-count: infinite;  
+    position:relative;
 }
 .eye{
-    height: 5rem;
-    width: 5rem;
+    height: calc(var(--shapeSize) + 1rem);
+    width: calc(var(--shapeSize) + 1rem);
     border-radius: 50%;
-  background-color: var(--colShapeCol);
+  background: radial-gradient(circle at center, var(--colEyeInset)20%, var(--colShapeCol) 25%);
+    background-repeat: no-repeat;
+
     position:relative;
-   transform: translate(0%, -25%);
-     box-shadow:inset 0px 0px 0px 10px var(--colEyeInset);
+   transform: translate(0%, -25%) scaleY(1);
+     box-shadow:inset 0.05rem 0.4rem 0.4rem 0.2rem var(--colEyeInset);
     animation: 3s eyeAnim;
     animation-iteration-count: infinite;
 
 }
+/*--Moving mascot ends here--*/
 
-.movingShape{
-    width: 50%;
-    height: auto;
-    margin:  0 auto;
-   display: flex;
-    flex-basis: auto;
-    flex-direction: column;
-    justify-content:flex-start;
-    align-items:center;
-    flex-wrap: nowrap;
-    overflow: hidden;
+.topContentLeft{
+    display: block;
+    height:15rem;
+    line-height: 15rem;
+    background-color: var(--colTopContentBG);
+    flex-basis: 30%;
+    margin-left: 3%;
+    border-radius: 40% 70%;
+    box-shadow: 0.0rem 0.4rem 0.2rem 0.2rem var(--colTopContentShadow);
+}
+.topContentLeft h1{
+    display: inline-block;
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+    font-size: 3.5rem;
+    color: var(--colTopContentText);
+    text-shadow: 0.1rem 0.3rem 0.2rem var(--colTopContentShadow);
+    opacity: 0.8;
+}
+.topContentRight{
+
+    display: block;
+    flex-basis:30%;
+    height: 81%;
+    margin: 0;
+    align-self:center;
+   
     
+    background:repeating-linear-gradient(-45deg,transparent, transparent 3rem,  var(--colTopContentBG) 3rem, var(--colTopContentBG) 6rem);
+    flex-basis: 30%;
+   
+}
+
     
 }
 footer{
@@ -195,9 +252,10 @@ footer{
 footer p{
     font-size: 1rem;
     padding: 1rem;
-    color: #666;
+    color: white;
 }
 
+/*Animations for the mascot*/
 @keyframes eyeAnim 
 {
     0%{

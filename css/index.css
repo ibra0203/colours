@@ -2,34 +2,44 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
 :root{
-    --animDur:7s;
-    --colHeaderBG: #eba422;
+    /*
+    Colors Used:
+    #da8d00
+    #886c3a
+    #eba422
+    #5a492b
+    white
+    */
+    --animDur:4s;
+    --colHeaderBG: #da8d00;
     --colMainBG: #886c3a;
-    --colH1: #352303;
-    --colH2: #352303;
+    --colH1: #5a492b;
+    --colH2: #5a492b;
     --colP: white;
     --colNavText: #5a492b;
     --colNavTextHover: white;
     --colNavBGHover: #5a492b;
-    --colHeadBorder: #352303;
+    --colHeadBorder: #5a492b;
     --colShapeCol: #5a492b;
-    --colTopBG: #da8d00;
+    --colTopBG: #eba422;
     --colHMarker: #eba422;
-    --colEyeInset: #fbeed8;
+    --colEyeInset: white;
+    --colTopContentBG: #da8d00;
+   --colTopContentShadow:#5a492b;
     
 }
 
 .introWrapper{
     position: fixed; 
     z-index: -1;
-    padding-top: 100px;
+
     opacity: 0;
     left: 0;
     top: 0;
     width: 100%; 
     height: 100%;
     overflow:hidden;
-    background-color: var(--colTopBG); 
+    background-color: var(--colHeaderBG); 
     animation-name: introAnimWrap;
     animation-duration: var(--animDur);
     animation-iteration-count: 1; 
@@ -73,29 +83,36 @@
         height: 100%;
         opacity: 1;
         transform:rotate(0);
-        font-size: 4rem;
+       
     }
     60%
     {
         top: 0%;
         height: 100%;
         opacity: 0;
+         font-size: 4rem;
+    }
+    100%
+    {
+         font-size: 0rem;
     }
 }
 @keyframes introAnimWrap
 {
     0%{
+        height: 100%;
         z-index: 1000;
         opacity: 1;
     }
     60%{
-        height: 100%;
+       height: 100%;
+        
     }
     95%{
         opacity: 1;
     }
     100%{
         opacity: 0;
-        height: 0%;
+        height: 0px;
     }
 }
