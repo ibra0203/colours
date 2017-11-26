@@ -2,28 +2,29 @@
 :root{
     /*
     Colors Used:
-    #ED4A7A
+    #C43B54
     #EFACF2
     #380E36
-    #7032A1
-    #7A4BB1
+    #9027B0
+    #4D0049
     */
-    --colHeaderBG: #7A4BB1;
+    --colHeaderBG: #380E36;
     --colMainBG: #380E36;
-    --colH1: #380E36;
-    --colH2: #7A4BB1;
+    --colH1: #C43B54;
+    --colH2: #9027B0;
     --colP: #EFACF2;
-    --colNavText: #380E36;
-    --colNavTextHover: #7032A1;
-    --colNavBGHover: #380E36;
+    --colNavText: #EFACF2;
+    --colNavTextHover: #380E36;
+    --colNavBGHover: #EFACF2;
     --colHeadBorder: #380E36;
-    --colShapeCol: #ED4A7A;
-    --colTopBG: #7032A1;
+    --colShapeCol: #C43B54;
+    --colTopBG: #9027B0;
     --colHMarker: #EFACF2;
     --colEyeInset: #EFACF2;
-    --colTopContentBG: #ED4A7A;
+    --colTopContentBG: #C43B54;
     --colTopContentText:#380E36;
    --colTopContentShadow: #EFACF2;
     --topContentTextShadow: transparent;
+    --colMainTextBG:#4D0049;
     
 }

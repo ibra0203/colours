@@ -8,7 +8,9 @@
     #886c3a
     #eba422
     #5a492b
+    #7E6D4F
     white
+   
     */
     --colHeaderBG: #da8d00;
     --colMainBG: #886c3a;
@@ -25,6 +27,7 @@
     --colEyeInset: white;
     --colTopContentBG: #da8d00;
     --colTopContentShadow:#5a492b;
+    --colMainTextBG:#7E6D4F;
     --animDur:4s;
     
 }

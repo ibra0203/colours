@@ -18,6 +18,7 @@
     --colTopContentBG: transparent;
     --colTopContentShadow:transparent;
     --colTopContentText:white;
+    --colMainTextBG: transparent;
     
     --shapeSize: 4rem;
     --topContentTextShadow: var(--colTopContentShadow);
@@ -38,6 +39,8 @@ html{
 }
 html,body{
     height:100%;
+    min-height: 768px;
+    min-width: 1024px;
     display: flex;
     flex-direction: column;
     
@@ -59,6 +62,12 @@ h2{
     font-size: 2.827rem;
     padding:1rem 2rem;
     color: var(--colH2);
+    display: block;
+    border-style: groove;
+    border-width: 0 0 0.3rem 0;
+    border-image: linear-gradient(to right, transparent 30%, var(--colTopContentBG), transparent 70%) 1 round;
+    
+    
 }
 
 p{
@@ -71,20 +80,22 @@ main p:last-child{
 }
 .wrapper{
     box-shadow: rgba(0,0,0,0.7) 0 0.3rem 3rem;
-    flex-basis:auto;
-    background-color: var(--colMainBG);
+    flex-basis:40%;
+     background:  var(--colMainBG);
+    
 }
 /*wrapper for the top part of the page*/
 .top-wrapper{
+    min-height: 60%;
     flex-basis: 60%;
     background-color: var(--colTopBG);
-    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content:center;
-    justify-content:flex-start;
     align-items: center;
+    justify-content:flex-start;
+
     
 
 }
@@ -99,7 +110,7 @@ header{
     justify-content: flex-start;
     align-items: center;
     flex-basis: auto;
-    border-bottom: 0.1rem solid var(--colHeadBorder);
+    border-bottom: 0.15rem solid var(--colHeadBorder);
     background-color: var(--colHeaderBG);
 }
 header>h1{
@@ -139,7 +150,6 @@ nav li>a{
 }
 nav li>a:hover,
 nav li>a:active{
-    --animDur:0s;
     color: var(--colNavTextHover);
     background-color: var(--colNavBGHover);
     transition: all 0.2s;
@@ -148,27 +158,34 @@ nav li>a:active{
 
 main{
     margin: auto;
-    width: 50%
+    width: 50%;
+
+    border: 0.3rem solid; 
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-image: linear-gradient(to bottom,transparent 5%, var(--colTopContentBG), var(--colTopContentBG), transparent) 1 100%;
+    background: linear-gradient(to top,transparent 20%, var(--colMainTextBG) 60%), var(--colMainBG);
 }
 
 /*Envelopes eye+triangleB+triangleT which make up the moving mascot below the header*/
 .movingMascot{
+    pointer-events: none;
     width: 30%;
-    height: auto;
-    
+    height: 80%;
+    box-sizing:border-box;
     margin-right: auto;
    display: flex;
     flex-basis: auto;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content:center;
     align-items:center;
     flex-wrap: nowrap;
-    overflow: hidden; 
+    overflow:visible; 
     box-shadow:inset 0px 0px white;
 }
-.triangleT {
-    
-	height: 0;
+.triangleT 
+{
+ 	height: 0;
 	width: 0;
 	border-left: var(--shapeSize) solid transparent;
 	border-right: var(--shapeSize) solid transparent;
@@ -236,11 +253,8 @@ main{
 
     display: block;
     flex-basis:30%;
-    height: 81%;
+    height: 80%;
     margin: 0;
-    align-self:center;
-   
-    
     background:repeating-linear-gradient(-45deg,transparent, transparent 3rem,  var(--colTopContentBG) 3rem, var(--colTopContentBG) 6rem);
     flex-basis: 30%;
    
@@ -251,12 +265,14 @@ main{
 footer{
     clear:both;
     width: 100%;
+    height: auto;
+   
     
 }
 footer p{
     font-size: 1rem;
     padding: 1rem;
-    color: white;
+    background-color: var(--colMainTextBG);
 }
 
 /*Animations for the mascot*/
