@@ -10,7 +10,6 @@
     #5a492b
     white
     */
-    --animDur:0s;
     --colHeaderBG: #da8d00;
     --colMainBG: #886c3a;
     --colH1: #5a492b;
@@ -25,14 +24,16 @@
     --colHMarker: #eba422;
     --colEyeInset: white;
     --colTopContentBG: #da8d00;
-   --colTopContentShadow:#5a492b;
+    --colTopContentShadow:#5a492b;
+    --animDur:4s;
     
 }
 
 .introWrapper{
+    display: hidden;
+    pointer-events: none;
     position: fixed; 
     z-index: -1;
-
     opacity: 0;
     left: 0;
     top: 0;
@@ -45,6 +46,11 @@
     animation-iteration-count: 1; 
    
     
+}
+/*Disable animation if was targeted with #no-intro so the intro
+won't have to play everytime'*/
+.introWrapper:target {
+    --animDur:0s;
 }
 .introWrapper p
 {
@@ -100,6 +106,7 @@
 @keyframes introAnimWrap
 {
     0%{
+        display: block;
         height: 100%;
         z-index: 1000;
         opacity: 1;
@@ -108,7 +115,7 @@
        height: 100%;
         
     }
-    95%{
+    85%{
         opacity: 1;
     }
     100%{

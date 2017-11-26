@@ -139,11 +139,13 @@ nav li>a{
 }
 nav li>a:hover,
 nav li>a:active{
+    --animDur:0s;
     color: var(--colNavTextHover);
     background-color: var(--colNavBGHover);
     transition: all 0.2s;
     
 }
+
 main{
     margin: auto;
     width: 50%
