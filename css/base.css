@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Days+One');
+@import url('https://fonts.googleapis.com/css?family=Days+One|Roboto+Slab');
 
 /*variables mainly for colors. Can be swapped in other CSS files.*/
 :root{
@@ -20,6 +20,7 @@
     --colTopContentText:white;
     
     --shapeSize: 4rem;
+    --topContentTextShadow: var(--colTopContentShadow);
     
 
 }
@@ -33,7 +34,7 @@
 html{
     font-size: 16px;
     line-height: 1.6;
-    font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+    font-family: 'Roboto Slab', 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
 html,body{
     height:100%;
@@ -50,6 +51,7 @@ html,body{
 }
 mark.w{
     color: var(--colHMarker);
+    text-shadow: 0.2rem 0.2rem 0.24rem var(--colH1);
     background: none;
 }
 h2{
@@ -194,12 +196,12 @@ main{
     height: calc(var(--shapeSize) + 1rem);
     width: calc(var(--shapeSize) + 1rem);
     border-radius: 50%;
-  background: radial-gradient(circle at center, var(--colEyeInset)20%, var(--colShapeCol) 25%);
+  background:  radial-gradient(circle at center, var(--colEyeInset)20%, var(--colShapeCol) 26%);
     background-repeat: no-repeat;
 
     position:relative;
    transform: translate(0%, -25%) scaleY(1);
-     box-shadow:inset 0.05rem 0.4rem 0.4rem 0.2rem var(--colEyeInset);
+    box-shadow:inset 0.05rem 0.5rem 0.4rem 0.2rem var(--colEyeInset);
     animation: 3s eyeAnim;
     animation-iteration-count: infinite;
 
@@ -225,7 +227,7 @@ main{
     line-height: normal;
     font-size: 3.5rem;
     color: var(--colTopContentText);
-    text-shadow: 0.1rem 0.3rem 0.2rem var(--colTopContentShadow);
+    text-shadow: 0.1rem 0.3rem 0.4rem var(--topContentTextShadow);
     opacity: 0.8;
 }
 .topContentRight{
