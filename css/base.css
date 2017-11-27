@@ -164,7 +164,7 @@ main{
     border-top-width: 0;
     border-bottom-width: 0;
     border-image: linear-gradient(to bottom,transparent 5%, var(--colTopContentBG), var(--colTopContentBG), transparent) 1 100%;
-    background: linear-gradient(to top,transparent 20%, var(--colMainTextBG) 60%), var(--colMainBG);
+    background: linear-gradient(to top,transparent, var(--colMainTextBG) 40%), var(--colMainBG);
 }
 
 /*Envelopes eye+triangleB+triangleT which make up the moving mascot below the header*/

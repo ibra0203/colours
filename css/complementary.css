@@ -6,13 +6,12 @@
     #557B4A
     #6E273D
     #29a189
-    #4B833C
     white
     */
     --colHeaderBG: #A14129;
     --colMainBG: #557B4A;
     --colH1: #6E273D;
-    --colH2: #6E273D;
+    --colH2: #A14129;
     --colP: white;
     --colNavText: #6E273D;
     --colNavTextHover: white;
@@ -24,6 +23,6 @@
     --colEyeInset: #A14129;
     --colTopContentBG: #A14129;
     --colTopContentShadow:#6E273D;
-    --colMainTextBG:#4B833C;
+    --colMainTextBG:#29a189;
     
 }
